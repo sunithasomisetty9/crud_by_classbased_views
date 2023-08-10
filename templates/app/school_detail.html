@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <center>
+            <h1>Detail view {{DOSI}} </h1>
+            <h1>school name is {{DOSI.sc_name}}</h1>
+            <h1>school principal is {{DOSI.sc_princi}}</h1>
+            <h1>school location is {{DOSI.sc_loc}}</h1>
+
+
+            <h1>students of {{DOSI}} school</h1>
+            {% for st in DOSI.panda.all %}
+
+                <h1>{{st.sname}}</h1>
+
+            {% endfor %}
+
+            <h1><a href="{% url 'update' pk=DOSI.pk %}">update school instance</a></h1>
+                
+            <h1><a href="{% url 'delete' pk=DOSI.pk %}">Delete school Instance</a></h1>
+            
+        </center>
+</body>
+</html>
